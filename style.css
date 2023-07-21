@@ -98,9 +98,12 @@ header{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transition: height .2s ease;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
 }
-
+.wrapper.active-popup{
+    transform: scale(1);
+}
 .wrapper.active{
     height: 520px;
 }
@@ -146,7 +149,7 @@ header{
     cursor: pointer;
     z-index: 1;
 }
-.form-box-register h2{
+.form-box  h2{
     font-size: 2em;
     text-align: center;
 }
@@ -160,11 +163,12 @@ header{
 }
 
 .input-box label{
-    position: relative;
-    top: -50%;
+    position: absolute;
+    top: 50%;
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
+    color: #fff;
     font-weight: 500;
     pointer-events: none;
     transition: .5s;
@@ -172,7 +176,7 @@ header{
 
 .input-box input:focus~label,
 .input-box input:valid~label{
-    top: -55px;
+    top: -5px;
     left: 4px;
 }
 
@@ -183,7 +187,7 @@ header{
     border: none;
     outline: none;
     font-size: 1em;
-    color: #fff;
+    /* color: #fff; */
     font-weight: 600;
     padding: 0 35px 0 5px;
 }
